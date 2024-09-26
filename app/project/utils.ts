@@ -3,9 +3,11 @@ import path from 'path'
 
 type Metadata = {
   title: string
+  description: string
   publishedAt: string
-  summary: string
-  image?: string
+  url: string
+  repository: string
+  published: boolean
 }
 
 function parseFrontmatter(fileContent: string) {
@@ -20,7 +22,7 @@ function parseFrontmatter(fileContent: string) {
     let [key, ...valueArr] = line.split(': ')
     let value = valueArr.join(': ').trim()
     value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value
+    metadata[key.trim() as keyof Metadata] = value as any
   })
 
   return { metadata: metadata as Metadata, content }
@@ -49,11 +51,9 @@ function getMDXData(dir) {
   })
 }
 
-export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
+export function getProjectPosts() {
+  return getMDXData(path.join(process.cwd(), 'app', 'project', 'posts'))
 }
-
-
 
 export function formatDate(date: string, includeRelative = false) {
   let currentDate = new Date()

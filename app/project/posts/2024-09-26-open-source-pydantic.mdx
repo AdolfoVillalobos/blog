@@ -1,0 +1,68 @@
+---
+title: "Open source: Contributing to Pydantic"
+description: "Improving the benchmark suite for pydantic, a Python library I use daily for data validation."
+publishedAt: "2024-09-25"
+url: "https://github.com/pydantic/pydantic"
+repository: "pydantic/pydantic"
+published: true
+---
+
+[Pydantic](https://github.com/pydantic/pydantic) is a popular Python library for data validation using Python type annotations. As a daily user of pydantic in my work, I've had the opportunity to contribute to its development, focusing on improving the benchmark suite used in their continuous integration (CI) pipeline.
+
+Among many of the posible routes of contrbution, I decided to focus on the benchmark suite outlines on Issue [#9711](https://github.com/pydantic/pydantic/issues/9711).
+
+## My Contributions
+
+My main contributions to pydantic have been centered around enhancing the benchmark suite, particularly for schema generation during runtime. Here are some key areas I've worked on:
+
+1. **Improved Benchmark Suite:** I've created and improved benchmarks that measure the performance of schema generation, a critical aspect of pydantic's functionality.
+
+2. **CI Integration:** My work has helped to integrate these benchmarks into the project's CI pipeline, allowing for continuous performance monitoring.
+
+3. **Performance Insights:** The benchmarks I've developed provide valuable insights into pydantic's performance, helping the maintainers identify and address potential bottlenecks.
+
+## Notable Pull Requests
+
+I've had several pull requests approved and merged into the pydantic project. Here are some of the most significant ones:
+
+1. [PR #10240: Add benchmarks for categories: serialization, validation and schema generations](https://github.com/pydantic/pydantic/pull/10240)
+2. [PR #10271: Add benchmarks for schema generation with custom validators](https://github.com/pydantic/pydantic/pull/10271)
+3. [PR #10290: Add schema generation benchmarks for models with custom serializers](https://github.com/pydantic/pydantic/pull/10290)
+4. [PR #10362: benchmark tagged/untagged unions and stdlib types in schema generation](https://github.com/pydantic/pydantic/pull/10362)
+
+## Impact and Learnings
+
+Contributing to pydantic has been a rewarding experience. It has allowed me to:
+
+- Gain deeper insights into the internals of a widely-used Python library.
+- Improve my skills in performance optimization and benchmarking.
+- Collaborate with experienced developers in the open-source community
+- Contribute to the improvement of a tool I use daily in my professional work
+
+I kind of knew all of these things before starting, but it's always nice to have concrete examples.
+
+## A note on hubris and ego
+
+One things that always surpises me is how quickly your previous work is forgotten. 
+
+In some of my PR's, the onwers of the project ruthlessly requested changes to my code. I don't take it personally at all, it's all in good fun.
+
+These experiences have taught me to remain humble and to always be willing to learn and improve.
+
+```python
+print("Actually, you always learn more from criticism than you do from praise.")
+```
+
+
+
+Thanks pydantic team for your time and consideration!.
+
+## Future Work
+
+I plan to continue contributing to pydantic, with a focus on:
+
+- Further refining the benchmark suite
+- Exploring opportunities for performance improvements in schema generation
+- Assisting in the development of new features related to data validation and serialization
+
+If you're interested in contributing to pydantic or learning more about my work, feel free to check out the [pydantic GitHub repository](https://github.com/pydantic/pydantic) or reach out to me directly.
