@@ -5,7 +5,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 export default function Page() {
   return (
     <>
-      <GoogleAnalytics gaId="G-4K5RHNCVMZ" />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       <section>
         <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
         Adolfo's Portfolio
