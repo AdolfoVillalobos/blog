@@ -7,11 +7,19 @@ export default function Page() {
         Adolfo's Portfolio
       </h1>
       <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
+        {`I'm Adolfo, a software engineer and data scientist from Chile living in Melbourne, Australia.
+       
+        `}
+      </p>
+      <p className="mb-4">
+        {`I currently work as an Algorithmic Trader at a hedge fund, where I focus on
+        high-frequency trading and quantitative investing. In my free time, I 
+        enjoy working on interesting problems and building products that can potentially
+        make a difference.
+        `}
+      </p>
+      <p className="mb-4">
+        {`In this site, you can find some of my work and writings.`}
       </p>
       <div className="my-8">
         <BlogPosts />
