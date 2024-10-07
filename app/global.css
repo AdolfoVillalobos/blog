@@ -1,4 +1,7 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 ::selection {
   background-color: #47a3f3;
@@ -31,6 +34,10 @@
 
 html {
   min-width: 360px;
+}
+
+.prose h1 {
+  @apply text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 mb-4;
 }
 
 .prose .anchor {
@@ -83,8 +90,9 @@ html {
   @apply m-0;
 }
 
+
 .prose p {
-  @apply my-4 text-neutral-800 dark:text-neutral-200;
+  @apply text-lg text-neutral-600 dark:text-neutral-400 mb-4;
 }
 
 .prose h1 {
@@ -103,8 +111,8 @@ html {
   @apply text-lg font-medium tracking-tight mt-6 mb-2;
 }
 
-.prose strong {
-  @apply font-medium;
+.prose strong, .prose b {
+  @apply font-bold text-neutral-100 dark:text-white !important;
 }
 
 .prose ul {
