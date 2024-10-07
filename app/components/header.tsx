@@ -41,7 +41,7 @@ export const Header: React.FC<Props> = ({ project }) => {
   }, []);
 
   return (
-    <header className="container mx-auto px-6 py-12 isolate overflow-hidden bg-gradient-to-tl from-black via-zinc-900 to-black">
+    <header className="relative mx-auto px-6 py-2 isolate overflow-hidden bg-gradient-to-tl from-black via-zinc-800 to-black">
       <div className="flex justify-between items-center mb-8">
         <Link
           href="/project"

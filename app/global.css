@@ -36,9 +36,7 @@ html {
   min-width: 360px;
 }
 
-.prose h1 {
-  @apply text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 mb-4;
-}
+
 
 .prose .anchor {
   @apply absolute invisible no-underline;
@@ -55,7 +53,7 @@ html {
 }
 
 .prose a {
-  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em] text-white;
 }
 
 .prose .anchor:after {
@@ -73,12 +71,14 @@ html {
 
 .prose code {
   @apply px-1 py-0.5 rounded-lg;
+  color: var(--sh-string);
 }
 
 .prose pre code {
   @apply p-0;
   border: initial;
   line-height: 1.5;
+  color: var(--sh-string);
 }
 
 .prose code span {
@@ -100,7 +100,7 @@ html {
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl font-medium tracking-tight mt-6 mb-2 text-neutral-800 dark:text-neutral-200;
 }
 
 .prose h3 {
@@ -116,7 +116,7 @@ html {
 }
 
 .prose ul {
-  @apply list-disc pl-6;
+  @apply list-disc pl-6 dark:text-white;
 }
 
 .prose ol {
