@@ -1,0 +1,56 @@
+---
+title: "Cloc-rs"
+description: "A CLI tool to count lines of code. This is a Rust implementation of the popular cloc tool."
+date: 2024-08-30
+url: "https://github.com/AdolfoVillalobos/cloc-rs"
+repository: "AdolfoVillalobos/cloc-rs"
+published: true
+---
+
+# Diving into Rust with cloc-rs: A Line Counter CLI Tool
+
+As a developer always eager to expand my skillset, I recently decided to delve into Rust programming. To make this learning experience practical and engaging, I created [cloc-rs](https://github.com/AdolfoVillalobos/cloc-rs), a Rust implementation of the popular cloc (Count Lines of Code) utility.
+
+## What is cloc-rs?
+
+cloc-rs is a command-line tool that counts the number of lines of code in files and directories. It's designed to be simple, fast, and flexible, allowing users to:
+
+- Count lines in individual files or entire directories
+- Filter by file extension
+- Recursively traverse directories
+
+## The Implementation
+
+The core of cloc-rs is built around two main functions:
+
+1. `count_lines`: This function reads a file and counts its lines.
+2. `count_lines_in_repo`: This function walks through a directory, applying filters if specified, and aggregates the line counts.
+
+```rust:src/lib.rs
+pub fn count_lines(file_path: &Path) -> io::Result<usize> {
+    let file = fs::File::open(file_path)?;
+    let reader = io::BufReader::new(file);
+    Ok(reader.lines().count())
+}
+
+pub fn count_lines_in_repo(path: &Path, extension: Option<&str>) -> io::Result<usize> {
+    // ... implementation details ...
+}
+```
+
+To ensure reliability, I also added a comprehensive test suite, covering various scenarios and edge cases.
+
+## What I Learned
+
+This project was an excellent introduction to Rust's key concepts:
+
+- Ownership and borrowing
+- Error handling with `Result`
+- Working with filesystem operations
+- Using external crates (like `walkdir` for directory traversal)
+
+## Try It Out!
+
+If you're interested in exploring cloc-rs, you can find the full source code and installation instructions in the [GitHub repository](https://github.com/AdolfoVillalobos/cloc-rs). Feel free to contribute or use it in your own projects!
+
+This journey into Rust has been both challenging and rewarding. cloc-rs may be a simple tool, but it's been an invaluable learning experience in a language that's rapidly gaining popularity in systems programming and beyond.
