@@ -1,0 +1,56 @@
+---
+title: "Machine Learning for Predicting Slaughterhouse Worker Risk"
+description: "An exploration of my Masters Degree thesis in Data Science, focusing on using machine learning techniques to predict occupational risks for slaughterhouse workers."
+date: 2024-08-01
+url: "https://www.sciencedirect.com/science/article/abs/pii/S0003687021002039"
+published: true
+---
+
+# Predicting Occupational Risks in Slaughterhouses: A Machine Learning Approach
+
+## Introduction
+
+As part of my Masters Degree in Data Science, I conducted research on the application of machine learning techniques to predict occupational risks for slaughterhouse workers. This blog post summarizes the key aspects of my thesis, which was published in the journal "Applied Ergonomics" in 2022.
+
+## Background
+
+Slaughterhouse work is known for its high risk of musculoskeletal disorders (MSDs) due to the repetitive and physically demanding nature of the tasks involved. Our study aimed to develop a predictive model that could identify workers at high risk of developing MSDs, potentially allowing for early intervention and prevention.
+
+## Methodology
+
+We employed a combination of ergonomic assessment tools and machine learning algorithms to create our predictive model. Here's a brief overview of our approach:
+
+1. **Data Collection**: We gathered data from slaughterhouse workers, including demographic information, work-related factors, and ergonomic assessments. We used Inertial Measurement Units (IMUs) to collect data on the workers' movements and their activities.
+
+2. **Feature Engineering**: We used the Rapid Upper Limb Assessment (RULA) method as the target variable, and created features based on the IMU data. 
+
+3. **Machine Learning Models**: We tested several algorithms, including logistic regression, random forests, and support vector machines, to predict the risk of MSDs modeled as a Time Series classification problem.
+
+## Key Findings
+
+Our study yielded several important results:
+
+1. The random forest model outperformed other algorithms, achieving an accuracy of 98% in predicting high-risk workers.
+
+2. MSD risk can be effectively measured by using cheap IMU sensors, and colelcting their real-time data through Bluetooth communication.
+
+## Implications and Future Work
+
+This research has significant implications for occupational health and safety in the meat processing industry. By accurately predicting workers at high risk of MSDs, companies can implement targeted interventions and ergonomic improvements to reduce injuries and improve worker well-being.
+
+Future work could involve:
+- Expanding the study to include more diverse slaughterhouse environments
+- Incorporating real-time sensor data for continuous risk assessment
+- Developing user-friendly tools for on-site risk prediction and management
+
+## Comments
+
+- I wrote this paper as part of the requirements for my Masters Degree in Data Science at PUC.
+- I used this opportunity to explore the use of Rust for time series classification, and the results were very promising. I managed to achieve a 98% accuracy in predicting the risk of MSDs.
+- I built a Bluetooth LE Scanner app using Python to collect the data from the IMUs.
+
+## Conclusion
+
+This project demonstrated the potential of machine learning in addressing critical occupational health issues. By combining ergonomic expertise with data science techniques, we've created a powerful tool for protecting worker health in high-risk industries.
+
+For more details, you can access the full paper [here](https://www.sciencedirect.com/science/article/abs/pii/S0003687021002039).
