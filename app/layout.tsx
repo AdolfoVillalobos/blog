@@ -13,8 +13,8 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Adolfo's Portfolio",
-    template: '%s | Adolfo\'s Portfolio',
+    default: "Adolfo Villalobos",
+    template: '%s | Adolfo Villalobos',
   },
   description: 'A portfolio by Adolfo Villalobos',
   openGraph: {
