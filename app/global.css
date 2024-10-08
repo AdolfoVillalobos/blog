@@ -104,11 +104,11 @@ html {
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl font-medium tracking-tight mt-6 mb-2 text-neutral-800 dark:text-neutral-200;
 }
 
 .prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+  @apply text-lg font-medium tracking-tight mt-6 mb-2 text-neutral-800 dark:text-neutral-200;
 }
 
 .prose strong, .prose b {

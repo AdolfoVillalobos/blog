@@ -1,0 +1,68 @@
+---
+title: 'imgix, Meta AI and Amazon S3 to have a cute blog'
+date: 2024-10-08
+summary: 'Using imgix, Meta AI and Amazon S3 to generate and serve images in my personal blog.'
+---
+
+
+
+## Streamlining Image Management with imgix and AWS S3
+
+In the world of web development and content creation, efficient image management is crucial for performance and user experience. This post explores how I've implemented a robust image management system using imgix in conjunction with Amazon S3, creating a powerful solution for storing, managing, and serving images.
+
+Here is an example of how the dahsboard looks:
+
+![imgix Dashboard](https://adolfovillalobos.imgix.net/blog/Screenshot%202024-10-08%20at%205.29.34%20pm.png)
+
+### The Power of imgix
+
+imgix is a real-time image processing and CDN (Content Delivery Network) platform that offers a user-friendly dashboard for managing digital assets. It provides an intuitive interface to:
+
+- Organize and categorize images
+- Generate optimized image URLs
+- Apply on-the-fly transformations and effects
+
+### AWS S3: Reliable Backend Storage
+
+Amazon S3 (Simple Storage Service) serves as the backend storage solution in this setup. It offers:
+
+- Scalable and secure object storage
+- High durability and availability
+- Cost-effective pricing for various storage needs
+
+### Setting Up the System
+
+1. **Create an S3 Bucket**: First, I set up an S3 bucket to store all my original images.
+
+2. **IAM User Configuration**: To manage access securely, I created an IAM (Identity and Access Management) user with specific permissions to interact with the S3 bucket.
+
+3. **CORS Policy**: Enabling CORS (Cross-Origin Resource Sharing) on the S3 bucket was crucial to allow imgix to access and serve the images.
+
+4. **imgix Source Creation**: In the imgix dashboard, I created a new source pointing to my S3 bucket, using the IAM user credentials for authentication.
+
+5. **Integration**: With the setup complete, I can now use imgix-generated URLs in my blog posts and project markdowns, ensuring optimized image delivery.
+
+
+More details on how to setup imgix with S3 can be found [here](https://docs.imgix.com/getting-started/setup/asset-manager#uploading).
+
+### Benefits of This Approach
+
+- **Performance**: imgix's CDN and on-the-fly optimizations ensure fast image loading times. No need to store the images on my own servers or Github repository. **YESS**.
+- **Flexibility**: Easy image transformations without modifying original files.
+- **Scalability**: S3's robust infrastructure handles growing storage needs.
+- **Cost-Effective**: Pay only for what you use in both imgix and S3.
+
+### Example
+
+I asked Meta AI to generate an image of a doge coin dog that is also a software engineer.
+
+
+
+![Doge Coin Dog](https://adolfovillalobos.imgix.net/blog/meta-ai-doge-chat.png)
+
+Soo cool! I just need to upload the image to imgix and then use the `https://adolfovillalobos.imgix.net/blog/doge-software-engineer.jpeg` URL in my blog posts and project markdowns, ensuring optimized image delivery.
+
+### Conclusion
+
+By combining imgix's powerful image processing capabilities with AWS S3's reliable storage, I've created an efficient, scalable, and user-friendly image management system. This setup not only streamlines my workflow but also enhances the overall performance and user experience of my web projects.
+
