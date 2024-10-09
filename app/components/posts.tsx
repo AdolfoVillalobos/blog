@@ -2,9 +2,11 @@ import Link from 'next/link'
 import { formatDate } from 'app/blog/utils'
 import { allPosts } from 'contentlayer/generated'
 export function BlogPosts() {
+
+  const posts = allPosts.filter((post) => post.published)
   return (
     <div>
-      {allPosts
+      {posts
         .sort((a, b) => {
           if (
             new Date(a.date) > new Date(b.date)
