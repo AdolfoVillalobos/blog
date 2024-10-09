@@ -4,12 +4,13 @@ import { Card } from './card'
 import { allProjects } from 'contentlayer/generated'
 
 export function ProjectPosts() {
+  const projects = allProjects.filter((project) => project.published)
 
   return (
 
     <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
       <div className="grid grid-cols-1 gap-4">
-        {allProjects
+        {projects
           .sort((a, b) => {
             if (
               new Date(a.date) > new Date(b.date)

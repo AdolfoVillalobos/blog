@@ -1,0 +1,46 @@
+---
+    name: Create PR from feature branch
+    
+    on:
+      push:
+        branches:
+          - feature/* # Trigger on feature branch push
+    
+    jobs:
+      create-pr:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout repo
+            uses: actions/checkout@v3
+            with:
+              ref: main
+    
+          - name: Reset feature branch
+            run: |
+              echo "Resetting feature branch ${{ github.ref }}"
+              git fetch origin ${{ github.ref }}:${{github.ref}}
+              git reset --hard ${{ github.ref }}
+    
+          - name: Render template
+            id: template
+            uses: chuhlomin/render-template@v1.2
+            with:
+              template: .github/pull-request-template.md
+              vars: |
+                author: ${{ github.actor }}
+    
+          - name: Create or update pull request
+            uses: peter-evans/create-pull-request@v5
+            with:
+              token: ${{ secrets.GH_TOKEN }}
+              title: "PR from ${{ github.ref_name }}"
+              committer: GitHub <noreply@github.com>
+              commit-message: "PR from feature"
+              author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+              branch: auto-pr-from-feature-${{ github.ref_name }}
+              body: ${{ steps.template.outputs.result }}
+              delete-branch: true
+              labels: |
+                automated-pr
+                feature
+    
