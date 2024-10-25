@@ -1,7 +1,7 @@
 ---
-title:  "Building a Personal Dashboard: Automating Life’s Essential Checks – Part 1"
+title: "Building a Personal Dashboard: Automating Life’s Essential Checks – Part 1"
 date: 2024-08-23
-summary: 'In this first post of the series, I’ll walk you through the initial step: setting up a simple Node.js app that checks the status of my personal blog.'
+summary: "In this first post of the series, I’ll walk you through the initial step: setting up a simple Node.js app that checks the status of my personal blog."
 published: true
 ---
 
@@ -11,7 +11,7 @@ Although I've been programming in Python for years, I've always been curious abo
 
 For a while now, I've been wanting to dive into `Node.js`, but I hadn't found the right project to push me to start learning. Recently, I listened `o an inspiring episode of Lex Fridman's podcast where [he interviewed Pieter Levels](https://youtu.be/oFtjKbXKqbg?si=HHh5lMkiMqoW0ejd), a digital nomad and developer known for his ability to ship products quickly. Pieter's approach to development—focusing on solving problems fast and iterating later—really resonated with me. I even bought his book [readMake](https://readmake.com/). It made me realize that I don’t need to wait for the perfect idea or project to start coding. I just need to begin.
 
-With this in mind, I decided to combine my interest in Node.js with a practical need: *automating the essential checks I perform daily in my life*.
+With this in mind, I decided to combine my interest in Node.js with a practical need: _automating the essential checks I perform daily in my life_.
 
 This marks the beginning of a project to build a personal dashboard where I can monitor various aspects of my life. In this first post of the series, I’ll walk you through the initial step: setting up a simple Node.js app that checks the status of my personal blog.
 
@@ -44,21 +44,26 @@ This initialized a Node.js project with TypeScript and installed `axios` for mak
 Next, I wrote a simple script to check whether my blog is online. This script sends a request to the blog’s URL and returns whether the blog is up or down:
 
 ```typescript
-import axios from 'axios';
+import axios from "axios";
 
-export async function checkBlogStatus(): Promise<{ status: string; color: string }> {
-    try {
-        const response = await axios.get('https://adolfovillalobos.github.io/website');
-        return {
-            status: response.status === 200 ? 'Online' : 'Offline',
-            color: response.status === 200 ? 'green' : 'red',
-        };
-    } catch (error) {
-        return {
-            status: 'Offline',
-            color: 'red',
-        };
-    }
+export async function checkBlogStatus(): Promise<{
+  status: string;
+  color: string;
+}> {
+  try {
+    const response = await axios.get(
+      "https://adolfovillalobos.github.io/website",
+    );
+    return {
+      status: response.status === 200 ? "Online" : "Offline",
+      color: response.status === 200 ? "green" : "red",
+    };
+  } catch (error) {
+    return {
+      status: "Offline",
+      color: "red",
+    };
+  }
 }
 ```
 
@@ -77,7 +82,7 @@ Here’s how I deployed the app:
 **Troubleshooting**:
 I ran into a few issues along the way, like missing the `start` script in `package.json` and port binding errors. These were quickly resolved, and I documented the fixes in case they help anyone else.
 
-I also discovered a GitHub Action in the Heroku documentation that automatically deploys the app when I push to the `main` branch.  
+I also discovered a GitHub Action in the Heroku documentation that automatically deploys the app when I push to the `main` branch.
 
 **Note**: In the future, you should consider setting up a CI/CD pipeline to automate the deployment process and run tests and checks before deploying to production. Just sayin!.
 
@@ -92,8 +97,6 @@ With the app deployed, I could now check the status of my blog from anywhere. I 
 This is just the beginning. My plan is to expand this dashboard by adding checks for unread emails, monitoring social media inboxes, and even tracking whether I’ve paid my credit cards. The goal is to have a single page that gives me a quick overview of everything important in my life, all in one place.
 
 I know the app is pretty basic right now, but the important thing is that I shipped something. The inspiration I got from Pieter Levels was all about taking action, and I’m excited to continue building on this foundation.
-
-
 
 #### Conclusion
 

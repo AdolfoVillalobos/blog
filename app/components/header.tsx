@@ -34,7 +34,7 @@ export const Header: React.FC<Props> = ({ project }) => {
   useEffect(() => {
     if (!ref.current) return;
     const observer = new IntersectionObserver(([entry]) =>
-      setIntersecting(entry.isIntersecting)
+      setIntersecting(entry.isIntersecting),
     );
     observer.observe(ref.current);
     return () => observer.disconnect();
@@ -51,7 +51,7 @@ export const Header: React.FC<Props> = ({ project }) => {
         </Link>
         <div className="flex gap-4">
           {project.repository && (
-            <Link 
+            <Link
               href={`https://github.com/${project.repository}`}
               target="_blank"
               className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100"
@@ -60,7 +60,7 @@ export const Header: React.FC<Props> = ({ project }) => {
             </Link>
           )}
           {project.url && (
-            <Link 
+            <Link
               href={project.url}
               target="_blank"
               className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100"
@@ -77,9 +77,7 @@ export const Header: React.FC<Props> = ({ project }) => {
         <p className="text-lg text-neutral-600 dark:text-neutral-400">
           {project.description}
         </p>
-
       </div>
     </header>
   );
-
 };

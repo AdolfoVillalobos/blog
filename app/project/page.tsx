@@ -4,9 +4,7 @@ import { allProjects } from "contentlayer/generated";
 import { Card } from "../components/card";
 import { Article } from "../components/article";
 
-
 export default async function ProjectsPage() {
-
   const sorted = allProjects
     .filter((p) => p.published)
     .sort(
@@ -35,7 +33,6 @@ export default async function ProjectsPage() {
           ))}
         </div>
         <div className="hidden w-full h-px md:block" />
-
       </div>
     </div>
   );

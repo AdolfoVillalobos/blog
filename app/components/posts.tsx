@@ -1,19 +1,16 @@
-import Link from 'next/link'
-import { formatDate } from 'app/blog/utils'
-import { allPosts } from 'contentlayer/generated'
+import Link from "next/link";
+import { formatDate } from "app/blog/utils";
+import { allPosts } from "contentlayer/generated";
 export function BlogPosts() {
-
-  const posts = allPosts.filter((post) => post.published)
+  const posts = allPosts.filter((post) => post.published);
   return (
     <div>
       {posts
         .sort((a, b) => {
-          if (
-            new Date(a.date) > new Date(b.date)
-          ) {
-            return -1
+          if (new Date(a.date) > new Date(b.date)) {
+            return -1;
           }
-          return 1
+          return 1;
         })
         .map((post) => (
           <Link
@@ -32,5 +29,5 @@ export function BlogPosts() {
           </Link>
         ))}
     </div>
-  )
+  );
 }

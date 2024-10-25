@@ -15,14 +15,13 @@ export const Article: React.FC<Props> = (props) => {
             {props.project.date ? (
               <time dateTime={new Date(props.project.date).toISOString()}>
                 {Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(
-                  new Date(props.project.date)
+                  new Date(props.project.date),
                 )}
               </time>
             ) : (
               <span>SOON</span>
             )}
           </span>
-
         </div>
         <h2 className="z-20 text-xl font-medium duration-1000 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
           {props.project.title}

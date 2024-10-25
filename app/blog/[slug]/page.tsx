@@ -1,20 +1,20 @@
-import { notFound } from 'next/navigation'
-import { formatDate } from 'app/blog/utils'
-import { allPosts } from 'contentlayer/generated'
-import { baseUrl } from 'app/sitemap'
-import { BlogMdx } from 'app/components/blog_mdx'
+import { notFound } from "next/navigation";
+import { formatDate } from "app/blog/utils";
+import { allPosts } from "contentlayer/generated";
+import { baseUrl } from "app/sitemap";
+import { BlogMdx } from "app/components/blog_mdx";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
     slug: post.slug,
-  }))
+  }));
 }
 
 export default function Blog({ params }) {
-  let post = allPosts.find((post) => post.slug === params.slug)
+  let post = allPosts.find((post) => post.slug === params.slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -24,8 +24,8 @@ export default function Blog({ params }) {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
             headline: post.title,
             datePublished: post.date,
             dateModified: post.date,
@@ -35,8 +35,8 @@ export default function Blog({ params }) {
               : `/og?title=${encodeURIComponent(post.title)}`,
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
-              '@type': 'Person',
-              name: 'My Portfolio',
+              "@type": "Person",
+              name: "My Portfolio",
             },
           }),
         }}
@@ -53,5 +53,5 @@ export default function Blog({ params }) {
         <BlogMdx code={post.body.code} />
       </article>
     </section>
-  )
+  );
 }
